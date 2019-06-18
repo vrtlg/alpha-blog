@@ -1,5 +1,14 @@
  <h1>Create an article</h1>
 
+ <% if @article.errors.any? %>
+ <h2>Errors:</h2>
+ <ul>
+   <% @article.errors.full_messages.each do |msg| %>
+   <li><%= msg%></li>
+   <%end%>
+ </ul>
+ <%end%>
+
  <%= form_for @article do |a|%>
   <p>
     <%= a.label :title %> <br/>
@@ -8,7 +17,11 @@
 
   <p>
     <%= a.label :description %> <br/>
-    <%= a.text_field :description %>
+    <%= a.text_area :description %>
+  </p>
+
+  <p>
+    <%= a.submit %>
   </p>
 
  <% end %>
