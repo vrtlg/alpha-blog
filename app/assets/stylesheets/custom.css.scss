@@ -1,2 +1,19 @@
+$navbar-default-bg: rgb(72, 202, 242);
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+  color: white;
+  font-size: 2em;
+  text-decoration: overline;
+  text-transform: uppercase;
+  text-shadow: 3px 3px #2b90af;
+  font-weight:bold;
+}
+
+#logo:hover{
+  transition: 0.3s;
+  color:#2b90af;
+  text-shadow: 3px 3px white;
+}
