@@ -7,20 +7,22 @@
 </ul>
 <%end%>
 
-<%= form_for @article do |a|%>
- <p>
-   <%= a.label :title %> <br/>
-   <%= a.text_field :title %>
- </p>
+<div class="article_form">
+  <%= form_for @article do |a|%>
+  <div class="row">
+   <%= a.label :title, class:"label"%>
+   <%= a.text_field :title, class:"input_field" %>
+  </div>
 
- <p>
-   <%= a.label :description %> <br/>
-   <%= a.text_area :description %>
- </p>
+  <div class="row">
+    <%= a.label :description, class:"label" %>
+    <%= a.text_area :description, class:"input_field", height:300 %>
+  </div>
 
- <p>
-   <%= a.submit %>
- </p>
+   <p>
+     <%= a.submit class: "btn btn-xlg"%>
+   </p>
+</div>
 
 <% end %>
  <%= link_to "Back to all articles", articles_path%>

@@ -84,3 +84,32 @@ footer ul{
 footer li{
   margin-right: 4px;
 }
+
+.row{
+  display:flex;
+  flex-flow: row nowrap;
+}
+
+.article_form .row{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom:10px;
+}
+
+.article_form .label{
+  width: 200px;
+  font-size: 2em;
+  font-weight:lighter;
+  letter-spacing: 2px;
+  color:black;
+  border: 1px, solid, red;
+}
+
+.article_form .input_field{
+  width: 50%;
+}
+
+.article_form .btn{
+  margin-left: 30%;
+  margin-top: 0;
+}
