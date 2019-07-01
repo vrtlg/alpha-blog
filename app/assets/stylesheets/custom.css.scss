@@ -1,5 +1,11 @@
 $navbar-default-bg: rgb(72, 202, 242);
 
+body{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -112,4 +118,41 @@ footer li{
 .article_form .btn{
   margin-left: 30%;
   margin-top: 0;
+}
+
+.errors, .message{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  padding: 20px 20px 20px 20px;
+  width: 50%;
+  list-style: none;
+  margin-bottom: 20px;
+  border-radius: 25px;
+}
+
+.errors{
+  border: 2px solid #fa5258;
+  background-color: #ffa3a5;
+  color: #fa5258;
+}
+
+.errors h2{
+  padding:0px 0px 10px 0px;
+  margin:0;
+  font-size: 1.5em;
+}
+
+.message{
+  font-size: 1.5em;
+  border: 2px solid #57ba82;
+  background-color: #abd4bd;
+  color: #57ba82;
+  text-align:center;
+}
+
+.article_title, .article_text{
+  font-weight:lighter;
+  letter-spacing: 2px;
 }

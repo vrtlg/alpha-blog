@@ -1,10 +1,12 @@
 <% if @article.errors.any? %>
-<h2>Errors:</h2>
-<ul>
-  <% @article.errors.full_messages.each do |msg| %>
-  <li><%= msg%></li>
-  <%end%>
-</ul>
+<div class="errors">
+  <h2>The following errors prevented your article from being created:</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg%></li>
+    <%end%>
+  </ul>
+  </div>
 <%end%>
 
 <div class="article_form">
