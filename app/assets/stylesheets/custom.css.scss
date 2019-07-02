@@ -1,9 +1,11 @@
 $navbar-default-bg: rgb(72, 202, 242);
 
-body{
+.container{
   display:flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 @import "bootstrap-sprockets";
@@ -32,6 +34,7 @@ body{
 
 .jumbotron{
   height:80vh;
+  width: 80vw;
   color:lightgrey;
   background-image:linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),asset-url("coffee-blue.jpg");
   background-size:cover;
@@ -98,35 +101,33 @@ footer li{
 
 .article_form .row{
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin-bottom:10px;
 }
 
+.article_input{
+  width: 40vw;
+}
+
+.input_tall{
+  height: 40vh;
+}
+
 .article_form .label{
-  width: 200px;
   font-size: 2em;
   font-weight:lighter;
   letter-spacing: 2px;
   color:black;
-  border: 1px, solid, red;
 }
 
 .article_form .input_field{
-  width: 50%;
-}
-
-.article_form .btn{
-  margin-left: 30%;
-  margin-top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px dotted $navbar-default-bg;
 }
 
 .errors, .message{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
   padding: 20px 20px 20px 20px;
-  width: 50%;
   list-style: none;
   margin-bottom: 20px;
   border-radius: 25px;
@@ -149,7 +150,6 @@ footer li{
   border: 2px solid #57ba82;
   background-color: #abd4bd;
   color: #57ba82;
-  text-align:center;
 }
 
 .article_title, .article_text{

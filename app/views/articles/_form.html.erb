@@ -13,12 +13,16 @@
   <%= form_for @article do |a|%>
   <div class="row">
    <%= a.label :title, class:"label"%>
-   <%= a.text_field :title, class:"input_field" %>
+    <div class="article_input">
+      <%= a.text_field :title, class:"input_field" %>
+    </div>
   </div>
 
   <div class="row">
     <%= a.label :description, class:"label" %>
-    <%= a.text_area :description, class:"input_field", height:300 %>
+    <div class="article_input input_tall">
+      <%= a.text_area :description, class:"input_field"%>
+    </div>
   </div>
 
    <p>
