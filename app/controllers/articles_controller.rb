@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article].inspect # inspect will display the created article -- this displays the hash
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       flash[:notice]="Article created"
       redirect_to article_path(@article)
