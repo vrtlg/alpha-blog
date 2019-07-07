@@ -1,21 +1,15 @@
 <h1>List of articles</h1>
 <p>
-<%= link_to "Create new article", new_article_path %>
+<%= link_to "Create new article", new_article_path, class: "action_button action_button-blue"%>
 </p>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-
   <% @all_articles.each do|article_instance|%>
-  <tr>
-    <td><%= article_instance.title %></td>
-    <td><%= article_instance.description %></td>
-    <td><%= link_to "Show", article_path(article_instance)%></td>
-    <td><%= link_to "Edit", edit_article_path(article_instance)%> </td>
-    <td><%= link_to "Delete", article_path(article_instance), method: :delete, data: {confirm: "Are you sure?"}%></td>
-  </tr>
+  <div class="article-preview">
+    <h1 class='article_title'><%=link_to article_instance.title, article_path(article_instance)%></h1>
+    <p class="article_text"><%= truncate(article_instance.description, length:100)%></p>
+  </div>
+  <div class="article_actions">
+    <%= link_to "Edit", edit_article_path(article_instance), class: "action_button action_button-yellow"%>
+    <%= link_to "Delete", article_path(article_instance), method: :delete, data: {confirm: "Are you sure?"}, class: "action_button action_button-red"%>
+  </div>
   <%end%>
-</table>

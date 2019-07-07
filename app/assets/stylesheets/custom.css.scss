@@ -156,3 +156,44 @@ footer li{
   font-weight:lighter;
   letter-spacing: 2px;
 }
+
+.article_actions{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.action_button{
+  margin: 5px;
+  padding: 5px 20px 5px 20px;
+  border-radius:25px;
+  color: black;
+  font-weight:lighter;
+  letter-spacing: 2px;
+}
+
+.action_button-yellow{
+  border: 2px solid #f2d63a;
+  background-color: #ffef96;
+}
+
+.action_button-red{
+  border: 2px solid #f22727;
+  background-color: #ff8787;
+}
+
+.action_button-green{
+  border: 2px solid #5fb340;
+  background-color: #c7edb9;
+}
+
+.action_button-blue{
+  border: 2px solid $navbar-default-bg;
+  background-color: rgba(72, 202, 242,0.5);
+}
+
+.article-preview{
+  display: flex;
+  flex-direction: column;
+  width:80%;
+}

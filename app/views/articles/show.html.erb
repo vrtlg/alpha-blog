@@ -4,4 +4,8 @@
   <%= @article.description %>
 </p>
 
- <%= link_to "Edit article", edit_article_path%>
+<div class="article_actions">
+   <%= link_to "Edit article", edit_article_path, class: "action_button action_button-yellow"%>
+   <%= link_to "Delete article", article_path, method: :delete, data: {confirm: "Are you sure?"}, class: "action_button action_button-red"%>
+   <%= link_to "Show all articles", articles_path, class: "action_button action_button-green"%>
+</div>
