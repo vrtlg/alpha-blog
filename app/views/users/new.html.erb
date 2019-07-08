@@ -1,20 +1,25 @@
-<h1>Welcome new user</h1>
-
 <%= render 'layouts/errors', obj: @user %>
 
 <div class="user-input_form">
   <%= form_for @user do |a|%>
   <div class="row">
-   <%= a.label :title, class:"label"%>
+   <%= a.label :username, class:"label"%>
     <div class="article_input">
-      <%= a.text_field :title, class:"input_field" %>
+      <%= a.text_field :title, class:"input_field", placeholder: "username" %>
     </div>
   </div>
 
   <div class="row">
-    <%= a.label :description, class:"label" %>
+   <%= a.label :email, class:"label"%>
+    <div class="article_input">
+      <%= a.email_field :title, class:"input_field", placeholder: "yourname@email.com" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= a.label :password, class:"label" %>
     <div class="article_input input_tall">
-      <%= a.text_area :description, class:"input_field"%>
+      <%= a.password_field :password, class:"input_field", placeholder: "password"%>
     </div>
   </div>
 
