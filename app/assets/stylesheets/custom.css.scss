@@ -99,7 +99,7 @@ footer li{
   flex-flow: row nowrap;
 }
 
-.article_form .row{
+.user-input_form .row{
   display: flex;
   justify-content: flex-end;
   margin-bottom:10px;
@@ -113,14 +113,14 @@ footer li{
   height: 40vh;
 }
 
-.article_form .label{
+.user-input_form .label{
   font-size: 2em;
   font-weight:lighter;
   letter-spacing: 2px;
   color:black;
 }
 
-.article_form .input_field{
+.user-input_form .input_field{
   width: 100%;
   height: 100%;
   border: 1px dotted $navbar-default-bg;

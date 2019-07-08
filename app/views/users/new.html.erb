@@ -1,7 +1,9 @@
-<%= render 'layouts/errors', obj: @article %>
+<h1>Welcome new user</h1>
+
+<%= render 'layouts/errors', obj: @user %>
 
 <div class="user-input_form">
-  <%= form_for @article do |a|%>
+  <%= form_for @user do |a|%>
   <div class="row">
    <%= a.label :title, class:"label"%>
     <div class="article_input">
