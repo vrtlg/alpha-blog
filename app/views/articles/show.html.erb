@@ -3,6 +3,9 @@
 <p class="article_text">
   <%= @article.description %>
 </p>
+<p> Author:
+  <%= @article.user.username %>
+</p>
 
 <div class="article_actions">
    <%= link_to "Edit article", edit_article_path, class: "action_button action_button-yellow"%>

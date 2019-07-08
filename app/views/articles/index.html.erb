@@ -8,6 +8,9 @@
     <h1 class='article_title'><%=link_to article_instance.title, article_path(article_instance)%></h1>
     <p class="article_text"><%= truncate(article_instance.description, length:100)%></p>
   </div>
+  <div class="row mini-footer">
+    <p>Created by <%= article_instance.user.username%> about <%= time_ago_in_words(article_instance.created_at)%> ago | Last update: <%= time_ago_in_words(article_instance.updated_at)%> ago</p>
+  </div>
   <div class="article_actions">
     <%= link_to "Edit", edit_article_path(article_instance), class: "action_button action_button-yellow"%>
     <%= link_to "Delete", article_path(article_instance), method: :delete, data: {confirm: "Are you sure?"}, class: "action_button action_button-red"%>
