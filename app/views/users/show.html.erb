@@ -3,3 +3,5 @@
   <img src="http://lorempixel.com/200/200/people/" alt="avatar">
 </div>
 <h2>Articles written by <%= @user.username %></h2>
+
+<%= render 'layouts/display-article', obj: @user.articles%>

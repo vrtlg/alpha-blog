@@ -79,8 +79,8 @@ footer{
   justify-content: space-between;
   text-align:center;
   background-color: $navbar-default-bg;
-  position:absolute;
-  bottom: 0;
+  bottom: 0%;
+  position:sticky;
 }
 
 footer ul{
@@ -158,8 +158,6 @@ footer li{
 }
 
 .article_actions{
-  display:flex;
-  flex-direction: row;
   justify-content: space-evenly;
 }
 
@@ -192,6 +190,18 @@ footer li{
   background-color: rgba(72, 202, 242,0.5);
 }
 
+.article-preview_container{
+  padding:0px 20px;
+  width:80%;
+  border:1px solid lightgrey;
+  border-radius: 25px;
+  background-color:#f7f7f7;
+  margin: 10px 0px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .article-preview{
   display: flex;
   flex-direction: column;
@@ -202,6 +212,8 @@ footer li{
   color: lightgrey;
   border-top: 1px dotted lightgrey;
   padding-top: 10px;
+  width:100%;
+  align-self:center;
 }
 
 .profile-page_title{
