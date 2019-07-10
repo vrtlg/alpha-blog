@@ -203,3 +203,18 @@ footer li{
   border-top: 1px dotted lightgrey;
   padding-top: 10px;
 }
+
+.profile-page_title{
+  font-size: 3em;
+  display:flex;
+  align-items:center;
+  width: 40%;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.profile-page_title img{
+  border-radius:50%;
+  height:100px;
+}
