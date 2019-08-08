@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :find_article, only: [:edit, :show, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @all_articles = Article.all
@@ -12,7 +14,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article].inspect # inspect will display the created article -- this displays the hash
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     if @article.save
       flash[:notice]="Article created"
       redirect_to article_path(@article)
@@ -50,5 +52,12 @@ class ArticlesController < ApplicationController
 
     def article_params
       params.require(:article).permit(:title, :description)
+    end
+
+    def require_same_user
+      if current_user != @article.user
+        flash[:notice] = "You can only make changes to articles you have written"
+        redirect_to root_path
+      end
     end
 end

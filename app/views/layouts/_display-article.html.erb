@@ -7,9 +7,12 @@
   <div class="row mini-footer">
     <p>Created by <%=link_to article.user.username, article.user%> about <%= time_ago_in_words(article.created_at)%> ago | Last update: <%= time_ago_in_words(article.updated_at)%> ago</p>
   </div>
+
+  <% if logged_in? && current_user == article.user %>
   <div class="row article_actions">
     <%= link_to "Edit", edit_article_path(article), class: "action_button action_button-yellow"%>
     <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "action_button action_button-red"%>
   </div>
+  <% end %>
 </div>
 <%end%>
