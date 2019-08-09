@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action  :set_user, only: [:edit, :update, :show] #this replaces having the below code in each of these actions:
       # @user = User.find(params[:id])
+  before_action :require_same_user, only: [:edit, :update]
 
   def new
     @user=User.new
@@ -42,6 +43,13 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:notice] = "You cannot make changes to others' accounts"
+      redirect_to root_path
+    end
   end
 
 end
