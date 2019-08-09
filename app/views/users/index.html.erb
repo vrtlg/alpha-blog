@@ -1,5 +1,9 @@
 <h1>Users</h1>
-
-<ul><% @users.each do |user| %>
-  <li><%=link_to user.username, user %> | <%= pluralize(user.articles.count, "article") %> | <%=link_to "x", user%></li>
-<% end %></ul>
+<div class="row"
+  <ul><% @users.each do |user| %>
+    <div class="user_card">
+      <li><%=link_to user.username, user %></li>
+      <li><%= pluralize(user.articles.count, "article") %></li>
+    </div>
+  <% end %></ul>
+</div>

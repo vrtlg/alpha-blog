@@ -96,7 +96,7 @@ footer li{
 
 .row{
   display:flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 .user-input_form .row{
@@ -229,4 +229,23 @@ footer li{
 .profile-page_title img{
   border-radius:50%;
   height:100px;
+}
+
+.user_card{
+  font-size: 16pt;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  list-style-type: none;
+  width: 200px;
+  height:150px;
+  border: 2px solid lightgrey;
+  background-color: rgba(200,200,200,0.5);
+  border-radius:20%;
+}
+
+.user_card li:nth-of-type(2){
+  font-size:12pt;
 }
