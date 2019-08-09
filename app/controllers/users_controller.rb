@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action  :set_user, only: [:edit, :update, :show] #this replaces having the below code in each of these actions:
       # @user = User.find(params[:id])
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def new
     @user=User.new
@@ -37,6 +37,13 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def destroy
+    @user=User.find(params[:id])
+    @user.destroy
+    flash[:notice] = "Account has been deleted"
+    redirect_to root_path
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)
@@ -47,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if !logged_in? && current_user != @user
+    if !logged_in? && current_user != @user && !user.admin?
       flash[:notice] = "You cannot make changes to others' accounts"
       redirect_to root_path
     end
