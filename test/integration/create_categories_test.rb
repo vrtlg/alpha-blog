@@ -13,4 +13,15 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
     assert_match "work", response.body #checking "work now exists"
   end
 
+  test "invalid category submission results in failure" do #creating a scenario that should fail to test the operation
+    get new_category_path
+    assert_template 'categories/new'
+    assert_no_difference 'Category.count' do
+      post categories_path, params: {category: {name: " "}}
+    end
+    assert_template 'categories/new'
+    assert_select 'div.errors'
+    assert_select 'li'
+  end
+
 end
