@@ -1,0 +1,16 @@
+<%= render 'layouts/errors', obj: @category %>
+
+<div class="user-input_form">
+  <%= form_for @category do |f|%>
+  <div class="row">
+   <%= f.label :name, class:"label"%>
+    <div class="article_input">
+      <%= f.text_field :name, class:"input_field", placeholder: "Category name" %>
+    </div>
+  </div>
+
+   <p>
+     <%= f.submit class: "btn btn-xlg"%>
+   </p>
+   <% end %>
+</div>
