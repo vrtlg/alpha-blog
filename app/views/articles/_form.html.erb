@@ -16,6 +16,12 @@
     </div>
   </div>
 
+  <div class="row">
+    <%= a.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+      <% cb.label(class: "checkbox-inline capitalize") {cb.check_box(class: "checkbox") + cb.text} %>
+    <% end %>
+  </div>
+
    <p>
      <%= a.submit class: "btn btn-xlg"%>
    </p>

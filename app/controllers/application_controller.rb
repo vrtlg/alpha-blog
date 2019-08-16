@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :set_categories
   protect_from_forgery with: :exception
 
   helper_method :current_user, :logged_in? #makes these methods available to views
@@ -16,5 +17,9 @@ class ApplicationController < ActionController::Base
       flash[:notice] = "You must be logged in first"
       redirect_to login_path
     end
+  end
+
+  def set_categories
+    @all_categories = Category.all
   end
 end

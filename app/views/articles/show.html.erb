@@ -4,11 +4,17 @@
   <%= @article.description %>
 </p>
 <p> Author:
-  <%= @article.user.username %>
+  <%= link_to @article.user.username, @article.user %>
 </p>
 
+<div>
+  <% if @article.categories.any? %>
+    <p class="mini_footer">Tags: <%= render @article.categories %></p>
+  <% end %>
+</div>
+
 <div class="article_actions">
-  <% if logged_in? && (current_user == article.user || current_user.admin?) %>
+  <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
     <%= link_to "Edit article", edit_article_path, class: "action_button action_button-yellow"%>
     <%= link_to "Delete article", article_path, method: :delete, data: {confirm: "Are you sure?"}, class: "action_button action_button-red"%>
   <% end %>

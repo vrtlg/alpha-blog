@@ -8,6 +8,12 @@
     <p>Created by <%=link_to article.user.username, article.user%> about <%= time_ago_in_words(article.created_at)%> ago | Last update: <%= time_ago_in_words(article.updated_at)%> ago</p>
   </div>
 
+  <div>
+    <% if article.categories.any? %>
+      <p class="mini-footer">Tags: <%= render article.categories %></p>
+    <% end %>
+  </div>
+
   <% if logged_in? && (current_user == article.user || current_user.admin?) %>
   <div class="row article_actions">
     <%= link_to "Edit", edit_article_path(article), class: "action_button action_button-yellow"%>
